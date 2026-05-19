@@ -28,7 +28,7 @@
 
 | Splash Screen | Login | Register |
 |:---:|:---:|:---:|
-| ![Splash](screenshots/splash.jpeg) | ![Login](screenshots/login.jpeg) | ![Register](screenshots/register.jpeg) |
+|<img width="576" height="1280" alt="WhatsApp Image 2026-05-19 at 1 16 02 PM" src="https://github.com/user-attachments/assets/99a982f6-d4f3-48d3-a2d9-25813e7de7a2" /> | <img width="576" height="1280" alt="WhatsApp Image 2026-05-19 at 1 16 07 PM" src="https://github.com/user-attachments/assets/46721e32-4bd9-4d1c-89e0-2dcb17a2f36b" /> |<img width="576" height="1280" alt="WhatsApp Image 2026-05-19 at 1 16 04 PM" src="https://github.com/user-attachments/assets/dc09d5c0-6e2c-4178-abda-bb8cc9aa4f37" /> |
 | Role selection screen | Secure phone + password login | Buyer or Farmer registration |
 
 ### 🛒 Buyer Experience
