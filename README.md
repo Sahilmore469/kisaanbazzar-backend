@@ -95,8 +95,7 @@
   - 📞 How to contact a farmer
   - 🔄 How to cancel an order
 - Quick reply suggestion buttons for easy navigation
-- **Note:** KisanBot answers only predefined FAQ questions.
-  It does not use AI or understand free-text queries.
+- **Note:** KisanBot answers only predefined FAQ questions. It does not use AI or understand free-text queries.
 
 ---
 
@@ -118,6 +117,8 @@
 ---
 
 ## 📁 Project Structure
+
+```
 KisanBazaar/
 │
 ├── 📱 lib/                                    # Flutter App
@@ -141,20 +142,21 @@ KisanBazaar/
 │       └── app_theme.dart                     # App theme & colors
 │
 └── 🖥️ kisaanbazzar-backend/                   # Node.js Backend
-├── server.js                              # Server entry point
-├── middleware/
-│   └── auth.js                            # JWT middleware
-├── models/
-│   ├── User.js                            # User schema
-│   ├── Product.js                         # Product schema
-│   ├── Order.js                           # Order schema
-│   └── Chat.js                            # Chat schema
-└── routes/
-├── auth.js                            # Register/Login
-├── products.js                        # Product CRUD
-├── orders.js                          # Order management
-├── cart.js                            # Cart (client-side)
-└── chat.js                            # Messaging
+    ├── server.js                              # Server entry point
+    ├── middleware/
+    │   └── auth.js                            # JWT middleware
+    ├── models/
+    │   ├── User.js                            # User schema
+    │   ├── Product.js                         # Product schema
+    │   ├── Order.js                           # Order schema
+    │   └── Chat.js                            # Chat schema
+    └── routes/
+        ├── auth.js                            # Register/Login
+        ├── products.js                        # Product CRUD
+        ├── orders.js                          # Order management
+        ├── cart.js                            # Cart (client-side)
+        └── chat.js                            # Messaging
+```
 
 ---
 
