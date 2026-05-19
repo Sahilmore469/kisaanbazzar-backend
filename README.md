@@ -50,17 +50,17 @@
 
 | My Farm | Incoming Orders | Messages |
 |:---:|:---:|:---:|
-| <img src="https://github.com/user-attachments/assets/16ea5683-1df1-438d-8f94-b352ffe050be" width="180"/> |<img src="https://github.com/user-attachments/assets/93297ad3-e4de-49f0-a659-fec036fedda7" width="180"/>| <img src="https://github.com/user-attachments/assets/d85d241f-98be-41d0-b82a-55fe2819830f" width="180"/> |
+| <img src="https://github.com/user-attachments/assets/16ea5683-1df1-438d-8f94-b352ffe050be" width="180"/> | <img src="https://github.com/user-attachments/assets/93297ad3-e4de-49f0-a659-fec036fedda7" width="180"/> | <img src="https://github.com/user-attachments/assets/d85d241f-98be-41d0-b82a-55fe2819830f" width="180"/> |
 | Manage listings & earnings | Confirm & update orders | Chat with buyers |
 
 ---
 
-### 🤖 KisanBot — AI Support
+### 🤖 KisanBot — FAQ Support
 
 | KisanBot |
 |:---:|
 | <img src="https://github.com/user-attachments/assets/ab95d5ad-7688-498b-beb3-b7690c695475" width="180"/> |
-| 24/7 AI support assistant |
+| FAQ-based support assistant |
 
 </div>
 
@@ -75,7 +75,7 @@
 - 🛒 Add to cart & place orders with delivery address
 - 📦 Track order status (Pending → Confirmed → In Transit → Delivered)
 - 💬 Chat directly with farmers
-- 🤖 **KisanBot** — 24/7 AI support chatbot
+- 🤖 **KisanBot** — FAQ-based support chatbot
 
 ### 👨‍🌾 For Farmers
 - ➕ List produce with custom emoji, price & quantity
@@ -83,13 +83,20 @@
 - 📬 Receive and confirm incoming orders
 - 🚚 Update order status (Confirm → Ship → Deliver)
 - 💬 Chat with buyers directly
-- 📊 Dashboard with total listings & earnings
+- 📊 Dashboard with total listings & quantity
 
-### 🤖 KisanBot (AI Chatbot)
-- Built-in support assistant powered by Claude AI
-- Answers questions about buying, selling, orders, payments
-- Quick reply suggestions
-- Always available — instant responses
+### 🤖 KisanBot (FAQ Chatbot)
+- Built-in support assistant with **fixed FAQ responses**
+- Answers common questions about:
+  - 🛒 How to place an order
+  - 👨‍🌾 How to list products as a farmer
+  - 📦 How to track orders
+  - 💰 Payment methods accepted
+  - 📞 How to contact a farmer
+  - 🔄 How to cancel an order
+- Quick reply suggestion buttons for easy navigation
+- **Note:** KisanBot answers only predefined FAQ questions.
+  It does not use AI or understand free-text queries.
 
 ---
 
@@ -105,14 +112,12 @@
 | 🔐 **Auth** | JWT (JSON Web Tokens) + bcrypt |
 | 📡 **API** | RESTful API |
 | 💬 **Real-time** | Socket.IO |
-| 🤖 **AI Chatbot** | Claude API (Anthropic) |
+| 🤖 **Chatbot** | Rule-based FAQ Bot (fixed responses) |
 | ☁️ **Deployment** | Render (Backend) + MongoDB Atlas |
 
 ---
 
 ## 📁 Project Structure
-
-```
 KisanBazaar/
 │
 ├── 📱 lib/                                    # Flutter App
@@ -129,28 +134,27 @@ KisanBazaar/
 │   │   ├── farmer_dashboard_screen.dart       # Farmer dashboard
 │   │   ├── cart_screen.dart                   # Shopping cart + checkout
 │   │   ├── orders_screen.dart                 # Order tracking
-│   │   └── chat_screen.dart                   # Chat + KisanBot
+│   │   └── chat_screen.dart                   # Chat + KisanBot FAQ
 │   ├── services/
 │   │   └── api_service.dart                   # All API calls
 │   └── theme/
 │       └── app_theme.dart                     # App theme & colors
 │
 └── 🖥️ kisaanbazzar-backend/                   # Node.js Backend
-    ├── server.js                              # Server entry point
-    ├── middleware/
-    │   └── auth.js                            # JWT middleware
-    ├── models/
-    │   ├── User.js                            # User schema
-    │   ├── Product.js                         # Product schema
-    │   ├── Order.js                           # Order schema
-    │   └── Chat.js                            # Chat schema
-    └── routes/
-        ├── auth.js                            # Register/Login
-        ├── products.js                        # Product CRUD
-        ├── orders.js                          # Order management
-        ├── cart.js                            # Cart (client-side)
-        └── chat.js                            # Messaging
-```
+├── server.js                              # Server entry point
+├── middleware/
+│   └── auth.js                            # JWT middleware
+├── models/
+│   ├── User.js                            # User schema
+│   ├── Product.js                         # Product schema
+│   ├── Order.js                           # Order schema
+│   └── Chat.js                            # Chat schema
+└── routes/
+├── auth.js                            # Register/Login
+├── products.js                        # Product CRUD
+├── orders.js                          # Order management
+├── cart.js                            # Cart (client-side)
+└── chat.js                            # Messaging
 
 ---
 
@@ -259,6 +263,18 @@ APK: `build/app/outputs/flutter-apk/app-release.apk`
 | POST | `/api/chat/thread` | Create thread |
 | GET | `/api/chat/:id/messages` | Get messages |
 | POST | `/api/chat/:id/messages` | Send message |
+
+---
+
+## ⚠️ Known Limitations
+
+| Feature | Status |
+|---------|--------|
+| KisanBot AI | ❌ Not AI-powered — answers fixed FAQ questions only |
+| Real-time chat | ⚠️ Polling-based, not instant |
+| Payment gateway | ❌ Not integrated — cash/UPI on delivery |
+| Push notifications | ❌ Not implemented |
+| Image upload | ❌ Emoji-based only, no real product images |
 
 ---
 
