@@ -42,7 +42,7 @@
 
 | My Farm | Chat | KisanBot |
 |:---:|:---:|:---:|
-| ![Farm](screenshots/farm.jpeg) | ![Chat](screenshots/chat.jpeg) | ![Bot](screenshots/kisanbot.jpeg) |
+|<img width="576" height="1280" alt="WhatsApp Image 2026-05-19 at 1 15 58 PM" src="https://github.com/user-attachments/assets/16ea5683-1df1-438d-8f94-b352ffe050be" /> |<img width="1260" height="2800" alt="WhatsApp Image 2026-05-19 at 1 16 10 PM" src="https://github.com/user-attachments/assets/d85d241f-98be-41d0-b82a-55fe2819830f" /> |<img width="576" height="1280" alt="WhatsApp Image 2026-05-19 at 1 15 59 PM" src="https://github.com/user-attachments/assets/ab95d5ad-7688-498b-beb3-b7690c695475" /> |
 | Manage listings & view earnings | Chat with buyers directly | 24/7 AI support assistant |
 
 </div>
