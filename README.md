@@ -8,6 +8,7 @@
 [![Node.js](https://img.shields.io/badge/Node.js-18.x-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org)
 [![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://mongodb.com)
 [![Express](https://img.shields.io/badge/Express.js-4.x-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com)
+[![Render](https://img.shields.io/badge/Deployed-Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://render.com)
 
 <br/>
 
@@ -19,42 +20,59 @@
 
 </div>
 
+## 📱 App Screenshots
+
+<div align="center">
+
+### 🚀 Onboarding & Auth
+
+| Splash Screen | Login | Register |
+|:---:|:---:|:---:|
+| ![Splash](screenshots/splash.jpeg) | ![Login](screenshots/login.jpeg) | ![Register](screenshots/register.jpeg) |
+| Role selection screen | Secure phone + password login | Buyer or Farmer registration |
+
+### 🛒 Buyer Experience
+
+| Browse | Cart | Orders |
+|:---:|:---:|:---:|
+| ![Browse](screenshots/browse.jpeg) | ![Cart](screenshots/cart.jpeg) | ![Orders](screenshots/orders.jpeg) |
+| Fresh products from local farmers | Add items & place orders | Track all your purchases |
+
+### 👨‍🌾 Farmer Experience
+
+| My Farm | Chat | KisanBot |
+|:---:|:---:|:---:|
+| ![Farm](screenshots/farm.jpeg) | ![Chat](screenshots/chat.jpeg) | ![Bot](screenshots/kisanbot.jpeg) |
+| Manage listings & view earnings | Chat with buyers directly | 24/7 AI support assistant |
+
+</div>
+
+---
+
 ## ✨ Features
 
 ### 🛒 For Buyers
 - Browse fresh produce from local farmers
 - Filter by category (Vegetables, Fruits, Grains, Dairy)
 - Search products by name or farm
-- View detailed product info & farmer contact
-- Add to cart & place orders
-- Track order status in real-time
+- Add to cart & place orders with delivery address
+- Track order status in real-time (Pending → Confirmed → In Transit → Delivered)
 - Chat directly with farmers
-- **KisanBot** — 24/7 in-app support chatbot
+- **KisanBot** — 24/7 in-app support chatbot with quick replies
 
 ### 👨‍🌾 For Farmers
 - List produce with custom emoji, price & quantity
 - Manage active listings (add/delete)
-- Receive and track incoming orders
+- Receive and confirm incoming orders
+- Update order status (Confirm → Ship → Deliver)
 - Chat with buyers directly
-- View farm dashboard with earnings & stats
+- View farm dashboard with total listings & quantity
 
-### 🤖 KisanBot (Chatbot)
-- Built-in support assistant
-- Answers questions about buying, selling, orders
-- Quick reply suggestions
-- Always available — no internet needed for bot responses
-
----
-
-## 📱 App Screenshots
-
-| Browse | Product Detail | My Farm |
-|--------|---------------|---------|
-| 🛒 Fresh products grid | 📦 Full details + Chat | 👨‍🌾 Farmer dashboard |
-
-| Chat | Orders | KisanBot |
-|------|--------|----------|
-| 💬 Farmer messaging | 📋 Order tracking | 🤖 Support bot |
+### 🤖 KisanBot (AI Chatbot)
+- Built-in support assistant powered by Claude AI
+- Answers questions about buying, selling, orders, payments
+- Quick reply suggestions (What is this app? / How to buy / How to sell / Track order)
+- Always available — instant responses
 
 ---
 
@@ -63,12 +81,14 @@
 | Layer | Technology |
 |-------|-----------|
 | 📱 **Frontend** | Flutter (Dart) |
-| 🎨 **UI** | Google Fonts, Custom Theme |
+| 🎨 **UI** | Google Fonts (Nunito Sans + Playfair Display) |
 | 🔄 **State Management** | Provider |
 | 🌐 **Backend** | Node.js + Express.js |
-| 🗄️ **Database** | MongoDB + Mongoose |
-| 🔐 **Auth** | JWT (JSON Web Tokens) |
+| 🗄️ **Database** | MongoDB Atlas + Mongoose |
+| 🔐 **Auth** | JWT (JSON Web Tokens) + bcrypt |
 | 📡 **API** | RESTful API |
+| 💬 **Real-time** | Socket.IO |
+| 🤖 **AI Chatbot** | Claude API (Anthropic) |
 | ☁️ **Deployment** | Render (Backend) + MongoDB Atlas |
 
 ---
@@ -78,40 +98,41 @@
 ```
 KisanBazaar/
 │
-├── 📱 lib/                          # Flutter App
-│   ├── main.dart                    # App entry point
+├── 📱 lib/                                    # Flutter App
+│   ├── main.dart                              # App entry point
 │   ├── models/
-│   │   ├── cart_provider.dart       # Cart state management
-│   │   └── models.dart              # Data models
+│   │   ├── cart_provider.dart                 # Cart state management
+│   │   └── models.dart                        # Data models
 │   ├── screens/
-│   │   ├── splash_screen.dart       # Splash & role selection
-│   │   ├── login_screen.dart        # Auth screen
-│   │   ├── home_screen.dart         # Main navigation
-│   │   ├── buyer_marketplace_screen.dart  # Browse products
-│   │   ├── produce_detail_screen.dart     # Product detail
-│   │   ├── farmer_dashboard_screen.dart   # Farmer dashboard
-│   │   ├── cart_screen.dart         # Shopping cart
-│   │   ├── orders_screen.dart       # Order tracking
-│   │   └── chat_screen.dart         # Chat + KisanBot
+│   │   ├── splash_screen.dart                 # Splash & role selection
+│   │   ├── login_screen.dart                  # Auth screen
+│   │   ├── home_screen.dart                   # Main navigation (role-based)
+│   │   ├── buyer_marketplace_screen.dart      # Browse products
+│   │   ├── produce_detail_screen.dart         # Product detail
+│   │   ├── farmer_dashboard_screen.dart       # Farmer dashboard
+│   │   ├── cart_screen.dart                   # Shopping cart + checkout
+│   │   ├── orders_screen.dart                 # Order tracking
+│   │   └── chat_screen.dart                   # Chat + KisanBot
 │   ├── services/
-│   │   └── api_service.dart         # API calls
+│   │   └── api_service.dart                   # All API calls
 │   └── theme/
-│       └── app_theme.dart           # App theme & colors
+│       └── app_theme.dart                     # App theme & colors
 │
-└── 🖥️ kisaanbazzar-backend/         # Node.js Backend
-    ├── server.js                    # Server entry point
+└── 🖥️ kisaanbazzar-backend/                   # Node.js Backend
+    ├── server.js                              # Server entry point
     ├── middleware/
-    │   └── auth.js                  # JWT middleware
+    │   └── auth.js                            # JWT middleware
     ├── models/
-    │   ├── User.js                  # User schema
-    │   ├── Product.js               # Product schema
-    │   ├── Order.js                 # Order schema
-    │   └── Chat.js                  # Chat schema
+    │   ├── User.js                            # User schema
+    │   ├── Product.js                         # Product schema
+    │   ├── Order.js                           # Order schema
+    │   └── Chat.js                            # Chat schema
     └── routes/
-        ├── auth.js                  # Register/Login
-        ├── products.js              # Product CRUD
-        ├── orders.js                # Order management
-        └── chat.js                  # Messaging
+        ├── auth.js                            # Register/Login
+        ├── products.js                        # Product CRUD
+        ├── orders.js                          # Order management
+        ├── cart.js                            # Cart (client-side)
+        └── chat.js                            # Messaging
 ```
 
 ---
@@ -122,7 +143,7 @@ KisanBazaar/
 
 - Flutter SDK 3.x+
 - Node.js 18.x+
-- MongoDB (local or Atlas)
+- MongoDB Atlas account (free)
 - Git
 
 ---
@@ -130,8 +151,8 @@ KisanBazaar/
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/kisanbazaar.git
-cd kisanbazaar
+git clone https://github.com/Sahilmore469/kisaanbazzar-backend.git
+cd kisaanbazzar-backend
 ```
 
 ---
@@ -139,20 +160,19 @@ cd kisanbazaar
 ### 2️⃣ Setup Backend
 
 ```bash
-cd kisaanbazzar-backend
 npm install
 ```
 
 Create a `.env` file:
 ```env
-MONGODB_URI=mongodb://localhost:27017/kisaanbazzar
+MONGO_URI=mongodb+srv://username:password@cluster0.xxxxx.mongodb.net/kisaanbazzar?retryWrites=true&w=majority
 JWT_SECRET=your_secret_key_here
 PORT=5000
 ```
 
 Start the server:
 ```bash
-node server.js
+npm run dev
 ```
 
 > Server runs at `http://localhost:5000`
@@ -162,7 +182,6 @@ node server.js
 ### 3️⃣ Setup Flutter App
 
 ```bash
-cd ..
 flutter pub get
 ```
 
@@ -175,7 +194,7 @@ static const String baseUrl = 'http://10.0.2.2:5000/api';
 static const String baseUrl = 'http://192.168.1.X:5000/api';
 
 // For production:
-static const String baseUrl = 'https://your-app.onrender.com/api';
+static const String baseUrl = 'https://kisaanbazzar-backend.onrender.com/api';
 ```
 
 Run the app:
@@ -185,27 +204,7 @@ flutter run
 
 ---
 
-## ☁️ Deployment
-
-### Backend → Render
-
-1. Push backend to GitHub
-2. Go to [render.com](https://render.com) → New Web Service
-3. Connect your repo
-4. Set environment variables:
-   - `MONGODB_URI` — MongoDB Atlas connection string
-   - `JWT_SECRET` — Secret key
-   - `PORT` — `10000`
-5. Build command: `npm install`
-6. Start command: `node server.js`
-
-### Database → MongoDB Atlas
-
-1. Create free cluster at [mongodb.com/atlas](https://mongodb.com/atlas)
-2. Whitelist all IPs: `0.0.0.0/0`
-3. Copy connection string to Render env vars
-
-### App → APK Build
+### 4️⃣ Build APK
 
 ```bash
 flutter build apk --release
@@ -218,6 +217,23 @@ build/app/outputs/flutter-apk/app-release.apk
 
 ---
 
+## ☁️ Deployment
+
+### Backend → Render (Live ✅)
+
+- **URL:** https://kisaanbazzar-backend.onrender.com
+- Build command: `npm install`
+- Start command: `node server.js`
+- Environment variables: `MONGO_URI`, `JWT_SECRET`, `PORT=10000`
+
+### Database → MongoDB Atlas (Live ✅)
+
+- Free M0 cluster
+- Region: Mumbai (ap-south-1)
+- Collections: users, products, orders, chats
+
+---
+
 ## 🔌 API Endpoints
 
 ### Auth
@@ -225,6 +241,7 @@ build/app/outputs/flutter-apk/app-release.apk
 |--------|----------|-------------|
 | POST | `/api/auth/register` | Register new user |
 | POST | `/api/auth/login` | Login user |
+| GET | `/api/auth/profile` | Get user profile |
 
 ### Products
 | Method | Endpoint | Description |
@@ -232,6 +249,7 @@ build/app/outputs/flutter-apk/app-release.apk
 | GET | `/api/products` | Get all products |
 | GET | `/api/products/farmer/my` | Get farmer's products |
 | POST | `/api/products` | Add new product |
+| PUT | `/api/products/:id` | Update product |
 | DELETE | `/api/products/:id` | Delete product |
 
 ### Orders
@@ -256,9 +274,9 @@ build/app/outputs/flutter-apk/app-release.apk
 
 | Variable | Description | Example |
 |----------|-------------|---------|
-| `MONGODB_URI` | MongoDB connection string | `mongodb+srv://...` |
-| `JWT_SECRET` | JWT signing secret | `kisanbazaar_secret` |
-| `PORT` | Server port | `5000` |
+| `MONGO_URI` | MongoDB Atlas connection string | `mongodb+srv://...` |
+| `JWT_SECRET` | JWT signing secret | `kisaanbazzar_secret` |
+| `PORT` | Server port | `10000` |
 
 ---
 
@@ -274,11 +292,13 @@ build/app/outputs/flutter-apk/app-release.apk
 
 ## 📄 License
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
 ---
 
 ## 👨‍💻 Author
+
+**Sahil More**
 
 Built with ❤️ for Indian farmers and buyers.
 
@@ -290,6 +310,8 @@ Built with ❤️ for Indian farmers and buyers.
 
 **⭐ Star this repo if you found it helpful!**
 
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/kisanbazaar?style=social)](https://github.com/yourusername/kisanbazaar)
+[![GitHub stars](https://img.shields.io/github/stars/Sahilmore469/kisaanbazzar-backend?style=social)](https://github.com/Sahilmore469/kisaanbazzar-backend)
+
+**🌐 Live Backend:** https://kisaanbazzar-backend.onrender.com
 
 </div>
