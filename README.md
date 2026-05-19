@@ -50,7 +50,7 @@
 
 | My Farm | Incoming Orders | Messages |
 |:---:|:---:|:---:|
-| <img src="https://github.com/user-attachments/assets/16ea5683-1df1-438d-8f94-b352ffe050be" width="180"/> | <img width="576" height="1280" alt="WhatsApp Image 2026-05-19 at 1 39 48 PM" src="https://github.com/user-attachments/assets/93297ad3-e4de-49f0-a659-fec036fedda7" />| <img src="https://github.com/user-attachments/assets/d85d241f-98be-41d0-b82a-55fe2819830f" width="180"/> |
+| <img src="https://github.com/user-attachments/assets/16ea5683-1df1-438d-8f94-b352ffe050be" width="180"/> |<img src="https://github.com/user-attachments/assets/93297ad3-e4de-49f0-a659-fec036fedda7" width="180"/>| <img src="https://github.com/user-attachments/assets/d85d241f-98be-41d0-b82a-55fe2819830f" width="180"/> |
 | Manage listings & earnings | Confirm & update orders | Chat with buyers |
 
 ---
