@@ -35,7 +35,7 @@
 
 | Browse | Cart | Orders |
 |:---:|:---:|:---:|
-| ![Browse](screenshots/browse.jpeg) | ![Cart](screenshots/cart.jpeg) | ![Orders](screenshots/orders.jpeg) |
+| <img width="576" height="1280" alt="WhatsApp Image 2026-05-19 at 1 16 12 PM" src="https://github.com/user-attachments/assets/16d98875-787a-4194-a833-12956262c686" /> | <img width="1260" height="2800" alt="WhatsApp Image 2026-05-19 at 1 16 08 PM" src="https://github.com/user-attachments/assets/4ef6b599-ba08-489b-bf59-e68ede60f681" /> | <img width="576" height="1280" alt="WhatsApp Image 2026-05-19 at 1 16 09 PM" src="https://github.com/user-attachments/assets/b5d66921-063d-42e8-8d9d-bfa242d1cdf6" />|
 | Fresh products from local farmers | Add items & place orders | Track all your purchases |
 
 ### 👨‍🌾 Farmer Experience
